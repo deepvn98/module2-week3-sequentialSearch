@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +10,15 @@ public class Main {
         list.add(3);
         list.add(4);
         list.add(5);
-        System.out.println(sequentialSearch(3,list));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số muốn tìm kiếm: ");
+        int number = scanner.nextInt();
+        if (sequentialSearch(number,list)== -1){
+            System.out.println("Không có trong danh sách!");
+        }else {
+            System.out.println(sequentialSearch(number,list));
+        }
+
 
     }
     public static int sequentialSearch(int key, List<Integer>list){
